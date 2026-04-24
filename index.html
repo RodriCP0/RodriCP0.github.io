@@ -1,0 +1,1277 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Slovenian Mobility Network — Movilidad Europea desde 2009</title>
+  <meta name="description" content="Prácticas profesionales en Eslovenia con acompañamiento integral, alojamiento garantizado y cursos de idiomas. Desde 2009." />
+  <link rel="icon" type="image/png" href="assets/img/logo-smi.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+
+  <!-- LOADER -->
+  <div id="loader"><div class="loader-bubble"></div></div>
+
+  <!-- CUSTOM CURSOR -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- PAGE MASK -->
+  <div class="page-mask" id="pageMask"></div>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <a class="nav-logo" data-nav="home" href="#" onclick="goTo(event,'home')">
+      <img src="assets/img/logo-smi.png" alt="Slovenian Mobility Network" />
+      <div class="nav-logo-text">
+        <span class="brand-mark">Slovenian Mobility</span>
+        <span class="brand-sub" data-i18n="siteTag">Network · est. 2009</span>
+      </div>
+    </a>
+    <nav class="nav-links">
+      <a data-nav="home" href="#" onclick="goTo(event,'home')" data-i18n="navHome">Inicio</a>
+      <a data-nav="about" href="#" onclick="goTo(event,'about')" data-i18n="navAbout">Nosotros</a>
+      <a data-nav="services" href="#" onclick="goTo(event,'services')" data-i18n="navServices">Servicios</a>
+      <a data-nav="slovenia" href="#" onclick="goTo(event,'slovenia')" data-i18n="navSlovenia">Eslovenia</a>
+      <a data-nav="contact" href="#" onclick="goTo(event,'contact')" data-i18n="navContact">Contacto</a>
+    </nav>
+    <div class="nav-right">
+      <div class="lang-switcher" aria-label="Language switcher">
+        <button class="lang-btn active" onclick="setLang('es')">ES</button>
+        <button class="lang-btn" onclick="setLang('pt')">PT</button>
+        <button class="lang-btn" onclick="setLang('en')">EN</button>
+      </div>
+      <a class="nav-cta" href="#" onclick="goTo(event,'contact')" data-i18n="navCta">Solicitar información</a>
+      <button class="nav-burger" onclick="toggleDrawer()" aria-label="Menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="8" x2="20" y2="8"/><line x1="4" y1="16" x2="20" y2="16"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- MOBILE DRAWER -->
+  <div class="mobile-drawer" id="drawer">
+    <div class="mobile-drawer-top">
+      <span style="font-family:'Instrument Serif',serif;font-size:1.4rem">Slovenian Mobility</span>
+      <button class="mobile-drawer-close" onclick="toggleDrawer()">✕</button>
+    </div>
+    <nav>
+      <a href="#" onclick="goTo(event,'home');toggleDrawer()" data-i18n="navHome">Inicio</a>
+      <a href="#" onclick="goTo(event,'about');toggleDrawer()" data-i18n="navAbout">Nosotros</a>
+      <a href="#" onclick="goTo(event,'services');toggleDrawer()" data-i18n="navServices">Servicios</a>
+      <a href="#" onclick="goTo(event,'slovenia');toggleDrawer()" data-i18n="navSlovenia">Eslovenia</a>
+      <a href="#" onclick="goTo(event,'contact');toggleDrawer()" data-i18n="navContact">Contacto</a>
+    </nav>
+    <div class="mobile-drawer-cta">
+      <a class="btn btn-primary" style="background:var(--aqua);color:var(--ink)" href="#" onclick="goTo(event,'contact');toggleDrawer()">
+        <span data-i18n="navCta">Solicitar información</span>
+        <span class="btn-arrow"></span>
+      </a>
+    </div>
+    <div class="mobile-drawer-bottom">
+      <span>info@slovenianmobility.eu</span>
+      <div style="display:flex;gap:6px">
+        <button class="lang-btn" onclick="setLang('es')">ES</button>
+        <button class="lang-btn" onclick="setLang('pt')">PT</button>
+        <button class="lang-btn" onclick="setLang('en')">EN</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================ -->
+  <!--                    HOME                       -->
+  <!-- ============================================ -->
+  <main class="page active" id="page-home">
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-left">
+            <span class="eyebrow reveal" data-i18n="heroEyebrow">movilidad europea · prácticas profesionales</span>
+            <h1 class="hero-headline reveal d1" data-i18n="heroTitle">
+              Tus prácticas en <span class="aqua-word">Europa</span>,<br>
+              <span class="underline">organizadas</span> desde 2009.
+            </h1>
+            <p class="hero-lead reveal d2" data-i18n="heroLead">Acompañamos a estudiantes, escuelas y familias en prácticas profesionales seguras, personalizadas y enriquecedoras en Eslovenia.</p>
+
+            <div class="hero-meta reveal d2">
+              <span class="chip"><span class="chip-dot"></span><span data-i18n="heroChip1">+15 años de experiencia</span></span>
+              <span class="chip"><span class="chip-plus">✦</span><span data-i18n="heroChip2">Erasmus+ Partner</span></span>
+            </div>
+
+            <div class="hero-ctas reveal d3">
+              <button class="btn btn-primary btn-lg" onclick="goTo(event,'services')">
+                <span data-i18n="heroCta1">Ver servicios</span>
+                <span class="btn-arrow"></span>
+              </button>
+              <button class="btn btn-ghost" onclick="goTo(event,'slovenia')" data-i18n="heroCta2">Descubrir Eslovenia</button>
+            </div>
+
+            <div class="hero-stats reveal d4">
+              <div class="hero-stat">
+                <strong data-count="15" data-suffix="+">15+</strong>
+                <span data-i18n="stat1">años acompañando</span>
+              </div>
+              <div class="hero-stat">
+                <strong>360°</strong>
+                <span data-i18n="stat2">servicio integral</span>
+              </div>
+              <div class="hero-stat">
+                <strong>3</strong>
+                <span data-i18n="stat3">idiomas en soporte</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-right reveal d2">
+            <div class="hero-visual">
+              <div class="main-img">
+                <img src="assets/img/ljubljana-bridge.jpg" alt="Ljubljana iluminada" />
+              </div>
+              <div class="hero-badge">
+                <div class="badge-icon">✦</div>
+                <div class="badge-txt">
+                  <strong data-i18n="heroBadgeTitle">Del aeropuerto a las prácticas</strong>
+                  <small data-i18n="heroBadgeSub">proceso 100% acompañado</small>
+                </div>
+              </div>
+              <div class="hero-sticker">
+                <svg viewBox="0 0 140 140">
+                  <defs>
+                    <path id="circlePath" d="M 70,70 m -52,0 a 52,52 0 1,1 104,0 a 52,52 0 1,1 -104,0"/>
+                  </defs>
+                  <text fill="currentColor" font-size="10" letter-spacing="2.5">
+                    <textPath href="#circlePath">  EST. 2009  ·  LJUBLJANA  ·  SLOVENIAN MOBILITY  · </textPath>
+                  </text>
+                </svg>
+                <span class="hero-sticker-center">✦</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="scroll-cue">
+          <span data-i18n="scrollHint">scroll</span>
+          <div class="line"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST BAR -->
+    <div class="trust-bar">
+      <div class="container">
+        <div class="trust-row">
+          <span class="trust-label" data-i18n="trustLabel">De confianza para</span>
+          <div class="trust-items">
+            <span class="trust-item"><span class="italic">Erasmus+</span></span>
+            <span class="trust-item"><span class="italic">Universidades</span></span>
+            <span class="trust-item"><span class="italic">Escuelas</span> FP</span>
+            <span class="trust-item"><span class="italic">Familias</span></span>
+            <span class="trust-item"><span class="italic">Empresas</span> europeas</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ABOUT STRIP -->
+    <section class="section about-strip">
+      <div class="about-blob"></div>
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="sh-lead">
+            <span class="eyebrow" data-i18n="aboutKicker">quiénes somos</span>
+            <h2 class="mt-40" data-i18n="aboutTitle">Una red <span class="italic">dedicada</span><br>a las personas.</h2>
+          </div>
+          <div class="sh-desc" data-i18n="aboutDesc">
+            Desde 2009 cuidamos cada detalle para que la experiencia en Eslovenia sea real, segura y transformadora.
+          </div>
+        </div>
+
+        <div class="about-text reveal d1">
+          <p>
+            <span data-i18n="aboutBigA">Sabemos los puntos más importantes para</span>
+            <span class="muted-phrase" data-i18n="aboutBigB">alumnos, padres y profesores.</span>
+            <span data-i18n="aboutBigC">Cuidamos cada detalle para que el resultado sean</span>
+            <span class="italic" style="color:var(--aqua)" data-i18n="aboutBigD">prácticas profesionales de calidad.</span>
+          </p>
+          <div class="about-divider"></div>
+          <button class="btn" onclick="goTo(event,'about')">
+            <span data-i18n="aboutReadMore">Conocer la historia</span>
+            <span class="btn-arrow"></span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES BENTO -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div class="sh-lead reveal">
+            <span class="eyebrow" data-i18n="servicesKicker">lo que ofrecemos</span>
+            <h2 class="mt-40" data-i18n="servicesTitle">Servicios <span class="italic">organizados</span><br>para una experiencia completa.</h2>
+          </div>
+          <div class="sh-desc reveal d2" data-i18n="servicesDesc">La propuesta reúne apoyo logístico, integración, supervisión y alojamiento para hacer la movilidad simple, segura y bien acompañada.</div>
+        </div>
+
+        <div class="bento">
+          <div class="bento-card b-two-third reveal">
+            <div class="b-num">
+              <span>01 / SERVICE</span>
+              <div class="b-icon" style="background:var(--aqua);color:var(--ink)">✦</div>
+            </div>
+            <h3 data-i18n="s1Title">Prácticas profesionales de calidad</h3>
+            <p data-i18n="s1Text">A través de Slovenian Mobility Network conoces otras formas de trabajar y culturas, mejorando las habilidades de relación y comunicación en un entorno internacional.</p>
+            <div class="bento-tags">
+              <span class="tag" data-i18n="tagInternational">Internacional</span>
+              <span class="tag" data-i18n="tagMulti">Multicultural</span>
+              <span class="tag" data-i18n="tagPro">Profesional</span>
+            </div>
+          </div>
+
+          <div class="bento-card b-third aqua reveal d1">
+            <div class="b-num">
+              <span>02 / SERVICE</span>
+              <div class="b-icon" style="background:var(--ink)">◎</div>
+            </div>
+            <h3 data-i18n="s2Title">Seguimiento personalizado</h3>
+            <p data-i18n="s2Text">Reuniones periódicas y visitas de tutorización in situ para evaluar la integración y satisfacción del alumno.</p>
+          </div>
+
+          <div class="bento-image reveal d2">
+            <img src="assets/img/ljubljana-trnovo.jpg" alt="Ljubljana Trnovo" />
+            <div class="img-tag">
+              <strong>Ljubljana</strong>
+              <small>46°N · 14°E</small>
+            </div>
+          </div>
+
+          <div class="bento-card b-third deep reveal">
+            <div class="b-num">
+              <span>03 / SERVICE</span>
+              <div class="b-icon">✈</div>
+            </div>
+            <h3 data-i18n="s3Title">Organización integral 360°</h3>
+            <p data-i18n="s3Text">Traslado desde el aeropuerto, orientación, cursos de idiomas y apoyo durante todo el período.</p>
+          </div>
+
+          <div class="bento-card b-third cream reveal d1">
+            <div class="b-num">
+              <span>04 / SERVICE</span>
+              <div class="b-icon" style="background:var(--coral);color:#fff">⌂</div>
+            </div>
+            <h3 data-i18n="s4Title">Alojamiento garantizado</h3>
+            <p data-i18n="s4Text">Pisos equipados con wifi, revisados por el equipo. Los mejores acuerdos para precios y condiciones.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURE QUOTE -->
+    <section class="feature-quote">
+      <div class="container">
+        <div class="reveal">
+          <span class="eyebrow" data-i18n="quoteKicker">testimonio editorial</span>
+          <blockquote class="mt-40" data-i18n="quoteText">
+            El ambiente acogedor de sus gentes y un nivel de vida asequible harán de las prácticas laborales una <span class="italic">experiencia única</span>.
+          </blockquote>
+          <cite><span class="line"></span><span data-i18n="quoteCite">Slovenian Mobility Network</span></cite>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div class="sh-lead reveal">
+            <span class="eyebrow" data-i18n="processKicker">cómo funciona</span>
+            <h2 class="mt-40" data-i18n="processTitle">Un proceso <span class="italic">claro</span><br>y sin sorpresas.</h2>
+          </div>
+          <div class="sh-desc reveal d2" data-i18n="processDesc">Cuatro etapas acompañadas de principio a fin para que la movilidad sea una experiencia profesional sólida.</div>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-step reveal">
+            <div class="step-num"><div class="num-circle">1</div><span class="num-label">Step 01</span></div>
+            <h4 data-i18n="step1Title">Perfil analizado</h4>
+            <p data-i18n="step1Text">Estudiamos cada caso: objetivos, área académica y expectativas para encontrar el encaje ideal.</p>
+          </div>
+          <div class="timeline-step reveal d1">
+            <div class="step-num"><div class="num-circle">2</div><span class="num-label">Step 02</span></div>
+            <h4 data-i18n="step2Title">Prácticas adecuadas</h4>
+            <p data-i18n="step2Text">Seleccionamos la empresa y el sector que mejor se alinean con el perfil del estudiante.</p>
+          </div>
+          <div class="timeline-step reveal d2">
+            <div class="step-num"><div class="num-circle">3</div><span class="num-label">Step 03</span></div>
+            <h4 data-i18n="step3Title">Logística completa</h4>
+            <p data-i18n="step3Text">Traslados, alojamiento, orientación y cursos de idiomas desde el primer momento.</p>
+          </div>
+          <div class="timeline-step reveal d3">
+            <div class="step-num"><div class="num-circle">4</div><span class="num-label">Step 04</span></div>
+            <h4 data-i18n="step4Title">Apoyo continuo</h4>
+            <p data-i18n="step4Text">Seguimiento constante, visitas in situ y personal de confianza disponible 24/7.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="section testimonials">
+      <div class="container">
+        <div class="section-head">
+          <div class="sh-lead reveal">
+            <span class="eyebrow" data-i18n="tstKicker">voces reales</span>
+            <h2 class="mt-40" data-i18n="tstTitle">Lo que cuentan<br>los <span class="italic">estudiantes</span>.</h2>
+          </div>
+          <div class="sh-desc reveal d2" data-i18n="tstDesc">Más de 2.000 estudiantes han pasado por nuestro programa. Estas son algunas de sus experiencias.</div>
+        </div>
+
+        <div class="testimonial-grid">
+          <div class="testimonial reveal">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text" data-i18n="tst1Text">"El acompañamiento fue excepcional desde antes de salir. Llegué a Ljubljana y todo estaba preparado: alojamiento, la empresa, incluso una reunión de orientación."</p>
+            <div class="testimonial-meta">
+              <div class="testimonial-avatar" style="background:var(--deep)">M</div>
+              <div>
+                <strong>María G.</strong>
+                <small data-i18n="tst1Meta">Estudiante de Turismo · 2025</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial reveal d1">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text" data-i18n="tst2Text">"La experiencia cambió mi forma de ver el trabajo internacional. El seguimiento personalizado marcó la diferencia."</p>
+            <div class="testimonial-meta">
+              <div class="testimonial-avatar" style="background:var(--coral)">C</div>
+              <div>
+                <strong>Carlos R.</strong>
+                <small data-i18n="tst2Meta">Ingeniería Informática · 2024</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial reveal d2">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text" data-i18n="tst3Text">"Como profesora coordinadora, he visto cómo Slovenian Mobility cuida cada detalle. Las familias agradecen el nivel de comunicación constante."</p>
+            <div class="testimonial-meta">
+              <div class="testimonial-avatar" style="background:var(--aqua);color:var(--ink)">A</div>
+              <div>
+                <strong>Ana P.</strong>
+                <small data-i18n="tst3Meta">Coordinadora FP · 2023</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY HERO -->
+    <section class="gallery-hero">
+      <img src="assets/img/ljubljana-night.jpg" alt="Ljubljana de noche" />
+      <div class="gallery-hero-content reveal">
+        <span class="eyebrow white" data-i18n="galleryKicker">eslovenia en imágenes</span>
+        <h2 class="mt-40" data-i18n="galleryTitle">Una capital pequeña,<br><span class="italic">joven</span> y llena de vida.</h2>
+        <p data-i18n="galleryDesc">Ciudad universitaria, corazón cultural del país, con arquitectura medieval y un ambiente internacional.</p>
+        <div class="mt-40">
+          <button class="btn btn-aqua" onclick="goTo(event,'slovenia')">
+            <span data-i18n="galleryCta">Descubrir el destino</span>
+            <span class="btn-arrow"></span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- TICKER -->
+    <div class="ticker">
+      <div class="ticker-track" id="ticker"></div>
+    </div>
+
+    <!-- FAQ -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div class="sh-lead reveal">
+            <span class="eyebrow" data-i18n="faqKicker">dudas frecuentes</span>
+            <h2 class="mt-40" data-i18n="faqTitle">Preguntas que<br>nos hacen a <span class="italic">menudo</span>.</h2>
+          </div>
+          <div class="sh-desc reveal d2" data-i18n="faqDesc">Resolvemos las dudas habituales. Si tienes alguna pregunta adicional, contacta con el equipo y respondemos en menos de 48 horas.</div>
+        </div>
+
+        <div class="faq">
+          <details class="faq-item reveal" open>
+            <summary><span data-i18n="faq1Q">¿Cuánto dura una estancia de prácticas?</span><span class="faq-icon">+</span></summary>
+            <p data-i18n="faq1A">Las estancias se adaptan a cada programa académico y van desde 1 mes hasta 12 meses. Erasmus+ suele situarse entre 2 y 6 meses. Adaptamos la duración al perfil y al calendario del estudiante.</p>
+          </details>
+          <details class="faq-item reveal d1">
+            <summary><span data-i18n="faq2Q">¿Qué incluye el alojamiento?</span><span class="faq-icon">+</span></summary>
+            <p data-i18n="faq2A">Pisos compartidos totalmente equipados, con wifi, ropa de cama, cocina funcional y revisados por nuestro equipo local. Negociamos precios especiales con propietarios de confianza.</p>
+          </details>
+          <details class="faq-item reveal d2">
+            <summary><span data-i18n="faq3Q">¿Es necesario hablar esloveno?</span><span class="faq-icon">+</span></summary>
+            <p data-i18n="faq3A">No. El inglés es la lengua franca y la mayoría de empresas trabajan en inglés. Ofrecemos también cursos de esloveno básico para quien quiera integrarse más.</p>
+          </details>
+          <details class="faq-item reveal">
+            <summary><span data-i18n="faq4Q">¿Cómo se financia la estancia?</span><span class="faq-icon">+</span></summary>
+            <p data-i18n="faq4A">La mayoría de estudiantes usan becas Erasmus+ o de sus instituciones. Preparamos presupuestos personalizados y ayudamos a entender las ayudas disponibles.</p>
+          </details>
+          <details class="faq-item reveal d1">
+            <summary><span data-i18n="faq5Q">¿Qué sectores ofrecéis?</span><span class="faq-icon">+</span></summary>
+            <p data-i18n="faq5A">Trabajamos con industria, tecnología, hostelería, turismo, educación, administración, marketing, ingeniería y más. Adaptamos el encaje al perfil profesional del estudiante.</p>
+          </details>
+          <details class="faq-item reveal d2">
+            <summary><span data-i18n="faq6Q">¿Qué pasa si tengo un problema durante la estancia?</span><span class="faq-icon">+</span></summary>
+            <p data-i18n="faq6A">Tienes un tutor dedicado y personal local disponible 24/7. Realizamos visitas periódicas a la empresa y reuniones para detectar cualquier incidencia a tiempo.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-banner">
+      <div class="cta-blob a"></div>
+      <div class="cta-blob b"></div>
+      <div class="reveal">
+        <span class="eyebrow white" data-i18n="ctaKicker">sin compromiso</span>
+        <h2 class="mt-40" data-i18n="ctaTitle">¿Listo para empezar tu<br><span class="italic">experiencia</span> europea?</h2>
+        <p data-i18n="ctaDesc">Elaboramos presupuestos personalizados en función de las necesidades de cada estudiante.</p>
+        <button class="btn btn-primary btn-lg" onclick="goTo(event,'contact')">
+          <span data-i18n="ctaBtn">Hablar con el equipo</span>
+          <span class="btn-arrow"></span>
+        </button>
+      </div>
+    </section>
+
+    <div data-footer></div>
+  </main>
+
+  <!-- ============================================ -->
+  <!--                    ABOUT                      -->
+  <!-- ============================================ -->
+  <main class="page" id="page-about">
+    <section class="page-hero">
+      <div class="page-hero-blob"></div>
+      <div class="container">
+        <span class="eyebrow" data-i18n="aboutPageKicker">quiénes somos</span>
+        <h1 class="mt-24"><span data-i18n="aboutPageTitleA">Desde 2009,</span><br><span class="italic" data-i18n="aboutPageTitleB">ponemos las personas primero.</span></h1>
+        <p class="ph-lead" data-i18n="aboutPageLead">Una red de profesionales comprometidos con la experiencia real del estudiante en cada etapa de su estancia en Eslovenia.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="country-split">
+          <div class="country-visual reveal">
+            <div class="img-main"><img src="assets/img/ljubljana-city.jpg" alt="Ljubljana" /></div>
+            <div class="img-accent" style="background:var(--aqua);display:flex;align-items:center;justify-content:center">
+              <div style="text-align:center">
+                <strong style="display:block;font-family:'Instrument Serif',serif;font-size:3rem;line-height:1;letter-spacing:-0.02em;color:var(--ink)">2009</strong>
+                <span style="font-family:'JetBrains Mono',monospace;font-size:0.7rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink-2)" data-i18n="aboutSince">fundado</span>
+              </div>
+            </div>
+          </div>
+          <div class="country-copy reveal d1">
+            <span class="eyebrow" data-i18n="aboutStoryKicker">nuestra historia</span>
+            <h2 class="mt-40" data-i18n="aboutStoryTitle">Una red construida<br>sobre <span class="italic">confianza</span>.</h2>
+            <p data-i18n="aboutP1">Desde 2009 trabajamos en el sector de la movilidad europea. Por eso sabemos los puntos más importantes para ofrecer a alumnos, padres y profesores. Cuidamos cada detalle para que el resultado sean unas prácticas profesionales de calidad.</p>
+            <p data-i18n="aboutP2">Sabemos lo importante que es la experiencia laboral para los jóvenes de hoy en día. Por eso, centramos nuestro esfuerzo en las personas — escogiendo y dedicando nuestro trabajo a buscar las prácticas más adecuadas en un entorno profesional y confortable.</p>
+            <p data-i18n="aboutP3">Nuestro enfoque personalizado nos diferencia: no somos un catálogo de opciones, somos un equipo comprometido con el éxito de cada estudiante antes, durante y después de su experiencia.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- IMPACT STATS -->
+    <section class="section" style="background:var(--ink);color:var(--cream);padding:clamp(64px,8vw,120px) 0">
+      <div class="container">
+        <div class="section-head">
+          <div class="sh-lead reveal">
+            <span class="eyebrow light" data-i18n="impactKicker">nuestro impacto</span>
+            <h2 class="mt-40" style="color:var(--cream)" data-i18n="impactTitle">Quince años de<br>movilidad <span class="italic" style="color:var(--aqua)">real</span>.</h2>
+          </div>
+          <div class="sh-desc reveal d2" style="color:rgba(246,241,232,0.65)" data-i18n="impactDesc">Los números reflejan el resultado del trabajo día a día de un equipo comprometido con cada estudiante.</div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid rgba(246,241,232,0.12);margin-top:32px" class="impact-grid">
+          <div class="reveal" style="padding:40px 28px;border-right:1px solid rgba(246,241,232,0.12)">
+            <strong style="display:block;font-family:'Instrument Serif',serif;font-size:clamp(3rem,5vw,4.8rem);line-height:1;color:var(--cream);letter-spacing:-0.03em" data-count="2000" data-suffix="+">2.000+</strong>
+            <span style="display:block;margin-top:14px;font-size:0.86rem;color:rgba(246,241,232,0.65);letter-spacing:0.04em" data-i18n="impact1">estudiantes acompañados</span>
+          </div>
+          <div class="reveal d1" style="padding:40px 28px;border-right:1px solid rgba(246,241,232,0.12)">
+            <strong style="display:block;font-family:'Instrument Serif',serif;font-size:clamp(3rem,5vw,4.8rem);line-height:1;color:var(--aqua);letter-spacing:-0.03em" data-count="15" data-suffix="+">15+</strong>
+            <span style="display:block;margin-top:14px;font-size:0.86rem;color:rgba(246,241,232,0.65);letter-spacing:0.04em" data-i18n="impact2">años de experiencia</span>
+          </div>
+          <div class="reveal d2" style="padding:40px 28px;border-right:1px solid rgba(246,241,232,0.12)">
+            <strong style="display:block;font-family:'Instrument Serif',serif;font-size:clamp(3rem,5vw,4.8rem);line-height:1;color:var(--cream);letter-spacing:-0.03em" data-count="350" data-suffix="+">350+</strong>
+            <span style="display:block;margin-top:14px;font-size:0.86rem;color:rgba(246,241,232,0.65);letter-spacing:0.04em" data-i18n="impact3">empresas aliadas</span>
+          </div>
+          <div class="reveal d3" style="padding:40px 28px">
+            <strong style="display:block;font-family:'Instrument Serif',serif;font-size:clamp(3rem,5vw,4.8rem);line-height:1;color:var(--sun);letter-spacing:-0.03em">98%</strong>
+            <span style="display:block;margin-top:14px;font-size:0.86rem;color:rgba(246,241,232,0.65);letter-spacing:0.04em" data-i18n="impact4">satisfacción del alumno</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background:var(--cream-2)">
+      <div class="container">
+        <div class="section-head">
+          <div class="sh-lead reveal">
+            <span class="eyebrow" data-i18n="valuesKicker">nuestros valores</span>
+            <h2 class="mt-40" data-i18n="valuesTitle">Lo que nos <span class="italic">guía</span><br>cada día.</h2>
+          </div>
+          <div class="sh-desc reveal d2" data-i18n="valuesDesc">Tres principios que definen cómo trabajamos y cómo construimos cada experiencia de movilidad.</div>
+        </div>
+        <div class="values-grid">
+          <div class="value-card reveal">
+            <div class="value-icon">◎</div>
+            <h4 data-i18n="v1Title">Personalización</h4>
+            <p data-i18n="v1Text">Cada estudiante es único. Analizamos perfiles, objetivos y circunstancias para encontrar el mejor encaje profesional.</p>
+          </div>
+          <div class="value-card reveal d1">
+            <div class="value-icon">✦</div>
+            <h4 data-i18n="v2Title">Seguridad</h4>
+            <p data-i18n="v2Text">Seguimiento constante, alojamiento revisado y personal de apoyo disponible durante toda la estancia.</p>
+          </div>
+          <div class="value-card reveal d2">
+            <div class="value-icon">↗</div>
+            <h4 data-i18n="v3Title">Calidad</h4>
+            <p data-i18n="v3Text">Trabajamos sólo con empresas y alojamientos que cumplen nuestros estándares de calidad e integración.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery-hero" style="height:60vh;min-height:420px">
+      <img src="assets/img/ljubljana-christmas.jpg" alt="Ljubljana plaza Prešeren" />
+      <div class="gallery-hero-content reveal">
+        <blockquote style="font-family:'Instrument Serif',serif;font-size:clamp(1.9rem,4.2vw,3.4rem);line-height:1.15;letter-spacing:-0.02em;color:var(--cream);max-width:900px">
+          <span data-i18n="aboutQuote">Cuidamos cada detalle para que el resultado sean unas prácticas profesionales de</span>
+          <span class="italic" style="color:var(--aqua)" data-i18n="aboutQuoteEnd">calidad excepcional.</span>
+        </blockquote>
+      </div>
+    </section>
+
+    <section class="cta-banner">
+      <div class="cta-blob a"></div>
+      <div class="cta-blob b"></div>
+      <div class="reveal">
+        <h2 data-i18n="aboutCtaTitle">¿Quieres conocer más<br>sobre nuestro <span class="italic">proceso</span>?</h2>
+        <p data-i18n="aboutCtaDesc">El equipo está disponible para resolver todas tus dudas y preparar un presupuesto sin compromiso.</p>
+        <button class="btn btn-primary btn-lg" onclick="goTo(event,'contact')">
+          <span data-i18n="ctaBtn">Hablar con el equipo</span>
+          <span class="btn-arrow"></span>
+        </button>
+      </div>
+    </section>
+
+    <div data-footer></div>
+  </main>
+
+  <!-- ============================================ -->
+  <!--                   SERVICES                    -->
+  <!-- ============================================ -->
+  <main class="page" id="page-services">
+    <section class="page-hero">
+      <div class="page-hero-blob"></div>
+      <div class="container">
+        <span class="eyebrow" data-i18n="servicesPageKicker">lo que ofrecemos</span>
+        <h1 class="mt-24"><span data-i18n="servicesPageTitleA">Una estructura completa</span><br><span class="italic" data-i18n="servicesPageTitleB">para estancias sin improviso.</span></h1>
+        <p class="ph-lead" data-i18n="servicesPageLead">La oferta incluye experiencias profesionales de calidad, supervisión, organización logística, cursos de idiomas y alojamiento garantizado.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <!-- Service 01 -->
+        <div class="service-detail reveal">
+          <div class="service-detail-left">
+            <div class="s-num">01 / <span data-i18n="srv1Cat">Prácticas</span></div>
+            <h3 data-i18n="srv1Title">Prácticas profesionales<br>de <span class="italic">calidad</span>.</h3>
+          </div>
+          <div class="service-detail-right">
+            <p data-i18n="srv1Text">A través de una experiencia profesional con Slovenian Mobility Network te facilitamos el conocimiento de otras formas de trabajar y culturas, mejorando las habilidades de relación y comunicación en un entorno internacional.</p>
+            <div class="service-features">
+              <div class="service-feature"><strong data-i18n="srv1F1">Entorno multicultural</strong><p data-i18n="srv1F1d">Convive con profesionales de toda Europa en tu día a día laboral.</p></div>
+              <div class="service-feature"><strong data-i18n="srv1F2">Sectores variados</strong><p data-i18n="srv1F2d">Industria, tecnología, hostelería, educación, administración y más.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 02 -->
+        <div class="service-detail reveal">
+          <div class="service-detail-left">
+            <div class="s-num">02 / <span data-i18n="srv2Cat">Seguimiento</span></div>
+            <h3 data-i18n="srv2Title">Prácticas seguras y<br><span class="italic">personalizadas</span>.</h3>
+          </div>
+          <div class="service-detail-right">
+            <p data-i18n="srv2Text">Seguimiento durante las prácticas con reuniones periódicas en nuestras oficinas y visitas de tutorización a las diferentes empresas para evaluar el nivel de integración y satisfacción del alumno in situ.</p>
+            <div class="service-features">
+              <div class="service-feature"><strong data-i18n="srv2F1">Reuniones in situ</strong><p data-i18n="srv2F1d">Visitas a tu empresa para comprobar la calidad de las prácticas.</p></div>
+              <div class="service-feature"><strong data-i18n="srv2F2">Tutor dedicado</strong><p data-i18n="srv2F2d">Una persona de contacto directo durante toda la estancia.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 03 -->
+        <div class="service-detail reveal">
+          <div class="service-detail-left">
+            <div class="s-num">03 / <span data-i18n="srv3Cat">Logística</span></div>
+            <h3 data-i18n="srv3Title">Servicio de organización<br><span class="italic">integral</span>.</h3>
+          </div>
+          <div class="service-detail-right">
+            <p data-i18n="srv3Intro">La red gestiona la logística esencial para que la llegada sea más simple, segura y confiada.</p>
+            <div class="service-features">
+              <div class="service-feature"><strong data-i18n="srv3F1">Traslados aeropuerto</strong><p data-i18n="srv3F1d">Recogida y retorno con nuestro propio personal desde el primer minuto.</p></div>
+              <div class="service-feature"><strong data-i18n="srv3F2">Orientación ciudad</strong><p data-i18n="srv3F2d">Reunión con pautas y imprescindibles al llegar a Ljubljana.</p></div>
+              <div class="service-feature"><strong data-i18n="srv3F3">Cursos de idiomas</strong><p data-i18n="srv3F3d">Cursos de inglés periódicos, básicos, avanzados y comunicativos.</p></div>
+              <div class="service-feature"><strong data-i18n="srv3F4">Apoyo permanente</strong><p data-i18n="srv3F4d">Personal disponible en cualquier momento para cualquier consulta.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 04 -->
+        <div class="service-detail reveal">
+          <div class="service-detail-left">
+            <div class="s-num">04 / <span data-i18n="srv4Cat">Alojamiento</span></div>
+            <h3 data-i18n="srv4Title">Acomodación<br><span class="italic">garantizada</span>.</h3>
+          </div>
+          <div class="service-detail-right">
+            <p data-i18n="srv4Text">Alojamientos en pisos completamente equipados con wifi. Toda nuestra oferta está revisada por nuestro personal. Llegamos a los mejores acuerdos con los propietarios para ofrecer precios y condiciones especiales para las estancias.</p>
+            <div class="service-features">
+              <div class="service-feature"><strong data-i18n="srv4F1">Completamente equipado</strong><p data-i18n="srv4F1d">Todo listo para que te sientas como en casa desde el día uno.</p></div>
+              <div class="service-feature"><strong data-i18n="srv4F2">WiFi incluido</strong><p data-i18n="srv4F2d">Conexión de calidad para seguir conectado con los tuyos.</p></div>
+              <div class="service-feature"><strong data-i18n="srv4F3">Precios negociados</strong><p data-i18n="srv4F3d">Los mejores acuerdos con propietarios para condiciones especiales.</p></div>
+              <div class="service-feature"><strong data-i18n="srv4F4">Revisado por el equipo</strong><p data-i18n="srv4F4d">Toda la oferta pasa por la revisión de nuestro personal local.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-banner">
+      <div class="cta-blob a"></div>
+      <div class="cta-blob b"></div>
+      <div class="reveal">
+        <h2 data-i18n="srvCtaTitle">¿Quieres un presupuesto<br><span class="italic">personalizado</span>?</h2>
+        <p data-i18n="srvCtaDesc">Confeccionamos presupuestos sin compromiso en función de las necesidades de cada estudiante.</p>
+        <button class="btn btn-primary btn-lg" onclick="goTo(event,'contact')">
+          <span data-i18n="ctaBtn">Hablar con el equipo</span>
+          <span class="btn-arrow"></span>
+        </button>
+      </div>
+    </section>
+
+    <div data-footer></div>
+  </main>
+
+  <!-- ============================================ -->
+  <!--                  SLOVENIA                     -->
+  <!-- ============================================ -->
+  <main class="page" id="page-slovenia">
+    <section class="page-hero">
+      <div class="page-hero-blob"></div>
+      <div class="container">
+        <span class="eyebrow" data-i18n="slPageKicker">el destino</span>
+        <h1 class="mt-24"><span data-i18n="slPageTitleA">Eslovenia:</span><br><span class="italic" data-i18n="slPageTitleB">asequible, internacional</span><br><span data-i18n="slPageTitleC">y llena de posibilidades.</span></h1>
+        <p class="ph-lead" data-i18n="slPageLead">Un país de Europa Central en continuo desarrollo, con una gama muy diversa de posibilidades en industria, cultura, ocio y educación.</p>
+      </div>
+    </section>
+
+    <div class="facts-bar">
+      <div class="fact">
+        <strong>Euro €</strong>
+        <small data-i18n="fact1l">moneda</small>
+      </div>
+      <div class="fact">
+        <strong>Ljubljana</strong>
+        <small data-i18n="fact2l">capital</small>
+      </div>
+      <div class="fact">
+        <strong data-i18n="fact3v">Inglés</strong>
+        <small data-i18n="fact3l">lengua franca</small>
+      </div>
+      <div class="fact">
+        <strong data-i18n="fact4v">Europa Central</strong>
+        <small data-i18n="fact4l">ubicación</small>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="container">
+        <div class="country-split">
+          <div class="country-visual reveal">
+            <div class="img-main"><img src="assets/img/ljubljana-market.jpg" alt="Mercado Central" /></div>
+            <div class="img-accent"><img src="assets/img/ljubljana-general.jpg" alt="Ljubljana" /></div>
+          </div>
+          <div class="country-copy reveal d1">
+            <span class="eyebrow" data-i18n="slCountryKicker">el país</span>
+            <h2 class="mt-40" data-i18n="slCountryTitle">Un país en <span class="italic">continuo desarrollo</span>.</h2>
+            <p data-i18n="slP1">Eslovenia es un país de Europa Central en continuo desarrollo con amplias posibilidades en industria, cultura, educación, sector servicios y otros muchos.</p>
+            <p data-i18n="slP2">Este país cuenta con una gama de posibilidades muy diversa en ocio y cultura: deportes de montaña, rutas en la naturaleza, excursiones culturales y un largo etcétera por descubrir.</p>
+            <p data-i18n="slP3">Uno de los puntos más atractivos es la facilidad de comunicarte en inglés. La inmensa mayoría de la población tiene un conocimiento alto del idioma, una excelente oportunidad para mejorar.</p>
+            <div class="country-facts-grid">
+              <div class="country-fact"><small data-i18n="fc1l">coste de vida</small><strong data-i18n="fc1v">Muy asequible</strong></div>
+              <div class="country-fact"><small data-i18n="fc2l">idioma principal</small><strong data-i18n="fc2v">Esloveno + Inglés</strong></div>
+              <div class="country-fact"><small data-i18n="fc3l">industria</small><strong data-i18n="fc3v">Múltiples sectores</strong></div>
+              <div class="country-fact"><small data-i18n="fc4l">ambiente</small><strong data-i18n="fc4v">Internacional</strong></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background:var(--cream-2);padding-top:80px">
+      <div class="container">
+        <div class="section-head">
+          <div class="sh-lead reveal">
+            <span class="eyebrow" data-i18n="ljKicker">la capital</span>
+            <h2 class="mt-40" data-i18n="ljTitle">Ljubljana: pequeña, <span class="italic">joven</span><br>y llena de vida.</h2>
+          </div>
+          <div class="sh-desc reveal d2" data-i18n="ljDesc">Ciudad universitaria y principal centro intelectual del país. Una capital europea encantadora con arquitectura medieval y ambiente moderno.</div>
+        </div>
+
+        <div class="mosaic reveal">
+          <div class="mosaic-item tall"><img src="assets/img/ljubljana-bridge.jpg" alt="Puente" /><span class="m-label">Triple Puente</span></div>
+          <div class="mosaic-item wide"><img src="assets/img/ljubljana-night.jpg" alt="Noche" /><span class="m-label">Ljubljana noche</span></div>
+          <div class="mosaic-item"><img src="assets/img/ljubljana-christmas.jpg" alt="Plaza" /><span class="m-label">Plaza Prešeren</span></div>
+          <div class="mosaic-item"><img src="assets/img/ljubljana-market.jpg" alt="Mercado" /><span class="m-label">Mercado Central</span></div>
+          <div class="mosaic-item wide"><img src="assets/img/ljubljana-press.jpg" alt="Vida" /><span class="m-label">Vida urbana</span></div>
+          <div class="mosaic-item"><img src="assets/img/ljubljana-trnovo.jpg" alt="Trnovo" /><span class="m-label">Trnovo</span></div>
+        </div>
+
+        <div style="margin-top:80px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start" class="about-layout reveal">
+          <div>
+            <p style="color:var(--muted);font-size:1.02rem;line-height:1.75;margin-bottom:20px" data-i18n="ljP1">Ljubljana es una capital pequeña y llena de vida. Ciudad universitaria y el principal centro intelectual del país, encantadora por descubrir con una arquitectura medieval.</p>
+            <p style="color:var(--muted);font-size:1.02rem;line-height:1.75" data-i18n="ljP2">Se trata de una moderna capital europea con un ambiente joven gracias a la universidad de Ljubljana y diferentes sedes como el Instituto Cervantes, British Council o Instituto Goethe.</p>
+          </div>
+          <div>
+            <p style="color:var(--muted);font-size:1.02rem;line-height:1.75" data-i18n="ljP3">El ambiente acogedor y agradable de sus gentes y un nivel de vida asequible harán de las prácticas laborales una experiencia única.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BEYOND LJUBLJANA -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div class="sh-lead reveal">
+            <span class="eyebrow" data-i18n="beyondKicker">más allá de la ciudad</span>
+            <h2 class="mt-40" data-i18n="beyondTitle">Naturaleza, costa<br>y <span class="italic">cultura viva</span>.</h2>
+          </div>
+          <div class="sh-desc reveal d2" data-i18n="beyondDesc">A pocas horas de Ljubljana, el país ofrece montañas, lagos, mar Adriático y escenas culturales únicas. Un destino por descubrir cada fin de semana.</div>
+        </div>
+
+        <div class="mosaic reveal" style="grid-template-rows:260px">
+          <div class="mosaic-item tall"><img src="assets/img/mountain.jpg" alt="Montaña" /><span class="m-label">Montañas</span></div>
+          <div class="mosaic-item"><img src="assets/img/sea-piran.jpg" alt="Piran" /><span class="m-label">Piran</span></div>
+          <div class="mosaic-item"><img src="assets/img/sea-izola.jpg" alt="Izola" /><span class="m-label">Izola</span></div>
+          <div class="mosaic-item"><img src="assets/img/sea-sails.jpg" alt="Costa" /><span class="m-label">Costa Adriática</span></div>
+          <div class="mosaic-item"><img src="assets/img/salt.jpg" alt="Salinas" /><span class="m-label">Salinas</span></div>
+          <div class="mosaic-item wide"><img src="assets/img/sport-dunking.jpg" alt="Cultura urbana" /><span class="m-label">Cultura urbana</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-banner">
+      <div class="cta-blob a"></div>
+      <div class="cta-blob b"></div>
+      <div class="reveal">
+        <h2 data-i18n="slCtaTitle">¿Listo para descubrir<br><span class="italic">Eslovenia</span>?</h2>
+        <p data-i18n="slCtaDesc">Consulta nuestros programas y encuentra las prácticas que mejor se adaptan a tu perfil.</p>
+        <button class="btn btn-primary btn-lg" onclick="goTo(event,'contact')">
+          <span data-i18n="ctaBtn">Hablar con el equipo</span>
+          <span class="btn-arrow"></span>
+        </button>
+      </div>
+    </section>
+
+    <div data-footer></div>
+  </main>
+
+  <!-- ============================================ -->
+  <!--                   CONTACT                     -->
+  <!-- ============================================ -->
+  <main class="page" id="page-contact">
+    <section class="page-hero">
+      <div class="page-hero-blob"></div>
+      <div class="container">
+        <span class="eyebrow" data-i18n="contactKicker">contacto</span>
+        <h1 class="mt-24"><span data-i18n="contactTitleA">Hablemos.</span><br><span class="italic" data-i18n="contactTitleB">Sin compromiso.</span></h1>
+        <p class="ph-lead" data-i18n="contactLead">Consulta con nuestro equipo las posibilidades que mejor se adaptan a cada perfil. Confeccionamos presupuestos sin compromiso.</p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-info reveal">
+            <span class="eyebrow" data-i18n="contactInfoKicker">información</span>
+            <h2 class="mt-40" data-i18n="contactInfoTitle">¿Para quién es<br>este programa?</h2>
+
+            <div class="contact-profiles">
+              <div class="contact-profile">
+                <div class="cp-icon">✦</div>
+                <div>
+                  <strong data-i18n="cp1T">Para estudiantes</strong>
+                  <p data-i18n="cp1D">Explora la opción más adecuada a tu perfil, área de estudio y objetivos de práctica profesional.</p>
+                </div>
+              </div>
+              <div class="contact-profile">
+                <div class="cp-icon">◎</div>
+                <div>
+                  <strong data-i18n="cp2T">Para escuelas y profesores</strong>
+                  <p data-i18n="cp2D">Organiza experiencias de movilidad con una estructura clara, apoyo cercano y seguimiento detallado.</p>
+                </div>
+              </div>
+              <div class="contact-profile">
+                <div class="cp-icon">⌂</div>
+                <div>
+                  <strong data-i18n="cp3T">Para familias</strong>
+                  <p data-i18n="cp3D">Conoce cómo funciona el proceso, el apoyo y la seguridad durante toda la estancia del estudiante.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-channel">
+              <div>
+                <strong>info@slovenianmobility.eu</strong>
+                <small data-i18n="ccEmail">correo electrónico</small>
+              </div>
+              <div>
+                <strong>Ljubljana, Eslovenia</strong>
+                <small data-i18n="ccLoc">oficina central</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="reveal d2">
+            <div class="form-wrap">
+              <h3 data-i18n="formTitle">Solicitar información</h3>
+              <p class="form-sub" data-i18n="formDesc">Completa el formulario y nos ponemos en contacto contigo en menos de 48 horas.</p>
+
+              <form onsubmit="submitForm(event)">
+                <div class="form-row">
+                  <div class="field">
+                    <label data-i18n="formName">Nombre</label>
+                    <input type="text" required placeholder="Tu nombre" data-ph-key="phName" />
+                  </div>
+                  <div class="field">
+                    <label data-i18n="formEmail">Email</label>
+                    <input type="email" required placeholder="tu@email.com" data-ph-key="phEmail" />
+                  </div>
+                </div>
+                <div class="field">
+                  <label data-i18n="formProfile">Perfil</label>
+                  <select>
+                    <option data-i18n="formSelectDefault">Selecciona tu perfil</option>
+                    <option data-i18n="formOpt1">Estudiante</option>
+                    <option data-i18n="formOpt2">Escuela / Profesor</option>
+                    <option data-i18n="formOpt3">Familia</option>
+                    <option data-i18n="formOpt4">Empresa partner</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label data-i18n="formMessage">Mensaje</label>
+                  <textarea placeholder="Cuéntanos qué buscas..." data-ph-key="phMsg"></textarea>
+                </div>
+                <button type="submit" class="btn btn-aqua btn-lg" style="width:100%;justify-content:center">
+                  <span data-i18n="formSend">Enviar solicitud</span>
+                  <span class="btn-arrow"></span>
+                </button>
+                <p class="form-footer-note" data-i18n="formNote">Respondemos en menos de 48 horas · Sin compromiso</p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div data-footer></div>
+  </main>
+
+  <!-- FOOTER TEMPLATE -->
+  <template id="footer-tpl">
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-head">
+          <div class="footer-brand">
+            <img src="assets/img/logo-smi.png" alt="SMI" />
+            <p data-i18n="footerDesc">Movilidad europea con acompañamiento cercano, prácticas personalizadas y apoyo completo durante toda la estancia.</p>
+            <div class="erasmus">
+              <img src="assets/img/erasmus.jpg" alt="Erasmus+" />
+              <span data-i18n="footerErasmus">Partner Erasmus+ · movilidad estudiantil europea</span>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h5 data-i18n="footerNav">Navegación</h5>
+            <ul>
+              <li><a href="#" onclick="goTo(event,'home')" data-i18n="navHome">Inicio</a></li>
+              <li><a href="#" onclick="goTo(event,'about')" data-i18n="navAbout">Nosotros</a></li>
+              <li><a href="#" onclick="goTo(event,'services')" data-i18n="navServices">Servicios</a></li>
+              <li><a href="#" onclick="goTo(event,'slovenia')" data-i18n="navSlovenia">Eslovenia</a></li>
+              <li><a href="#" onclick="goTo(event,'contact')" data-i18n="navContact">Contacto</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h5 data-i18n="footerServices">Servicios</h5>
+            <ul>
+              <li><a data-i18n="f1">Prácticas de calidad</a></li>
+              <li><a data-i18n="f2">Seguimiento personalizado</a></li>
+              <li><a data-i18n="f3">Organización integral</a></li>
+              <li><a data-i18n="f4">Alojamiento garantizado</a></li>
+              <li><a data-i18n="f5">Cursos de idiomas</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h5 data-i18n="footerContactTitle">Contacto</h5>
+            <ul>
+              <li><a href="mailto:info@slovenianmobility.eu">info@slovenianmobility.eu</a></li>
+              <li><a data-i18n="footerLoc">Ljubljana, Eslovenia</a></li>
+              <li><a data-i18n="footerHours">Lun–Vie · 9:00–18:00</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2026 Slovenian Mobility Network <span class="dot">·</span> <span data-i18n="footerRights">Todos los derechos reservados</span></p>
+          <p>Ljubljana <span class="dot">·</span> Eslovenia <span class="dot">·</span> Europa</p>
+        </div>
+      </div>
+    </footer>
+  </template>
+
+  <script src="assets/app.js"></script>
+<script data-pplx-inline-edit>
+(function () {
+  if (window === window.top) return;
+
+  const allowedParentOrigins = ["https://www.perplexity.ai","https://perplexity.ai","https://testing.perplexity.ai","https://staging.perplexity.ai","https://*.preview.i.perplexity.ai","http://localhost:3000","http://127.0.0.1:3000","http://localhost:5173","http://127.0.0.1:5173"];
+  const MAX_FONT_BYTES = 500 * 1024;
+  const MAX_TOTAL_FONT_BYTES = 2 * 1024 * 1024;
+  let scrollForwarding = false;
+  let scrollRaf = 0;
+  let trustedTopOrigin = null;
+
+  // Allow entries like "https://*.preview.i.perplexity.ai" — the wildcard
+  // matches a single DNS label (no dots), so "https://*.foo" cannot stretch
+  // across multiple labels.
+  function matchesAllowedOrigin(origin) {
+    if (!origin) return false;
+    for (const entry of allowedParentOrigins) {
+      if (!entry.includes("*")) {
+        if (entry === origin) return true;
+        continue;
+      }
+      const pattern = new RegExp(
+        "^" +
+          entry.replace(/[.+?^${}()|[\]\\]/g, "\\$&").replace(/\*/g, "[^.]+") +
+          "$",
+      );
+      if (pattern.test(origin)) return true;
+    }
+    return false;
+  }
+
+  // Trust decision: when the sender is same-origin-visible (event.origin is a
+  // real origin like https://www.perplexity.ai) we trust event.origin directly.
+  // When event.origin is "null" (opaque broker srcdoc), we fall back to the
+  // broker's stamped `parentOrigin` to identify the top window. The fallback
+  // is claim-only — we rely on the browser's native `targetOrigin` enforcement
+  // on the response path (see postToTrustedTop) to ensure replies can't be
+  // delivered to anyone but the actual top window of that claimed origin.
+  function getTrustedParentOrigin(event) {
+    const forwardedParentOrigin =
+      typeof event.data.parentOrigin === "string" ? event.data.parentOrigin : null;
+    const parentOrigin = event.origin === "null" ? forwardedParentOrigin : event.origin;
+    return matchesAllowedOrigin(parentOrigin) ? parentOrigin : null;
+  }
+
+  // All responses go to window.top with targetOrigin = the allowlisted origin.
+  // An attacker that iframes us inside their own null-origin broker can claim
+  // any parentOrigin they like, but the browser will drop the reply whenever
+  // the real top's origin doesn't match — so the screenshot never leaves.
+  function postToTrustedTop(message) {
+    if (!trustedTopOrigin) return;
+    try {
+      window.top.postMessage(message, trustedTopOrigin);
+    } catch (_error) {}
+  }
+
+  function inlineAll(original, clone) {
+    if (original.nodeType !== 1 || clone.nodeType !== 1) return;
+
+    try {
+      const computedStyle = getComputedStyle(original);
+      // cssText on a computed style is the serialized declaration in modern
+      // Chromium/Safari — a single read beats enumerating ~400 longhand
+      // properties. Firefox returns "" here, so we fall back on empty.
+      const serialized = computedStyle.cssText;
+      if (serialized) {
+        clone.style.cssText = serialized;
+      } else {
+        const parts = new Array(computedStyle.length);
+        for (let index = 0; index < computedStyle.length; index += 1) {
+          const property = computedStyle[index];
+          parts[index] = `${property}:${computedStyle.getPropertyValue(property)};`;
+        }
+        clone.style.cssText = parts.join("");
+      }
+    } catch (_error) {}
+
+    const originalChildren = original.children;
+    const clonedChildren = clone.children;
+    for (
+      let index = 0;
+      index < originalChildren.length && index < clonedChildren.length;
+      index += 1
+    ) {
+      inlineAll(originalChildren[index], clonedChildren[index]);
+    }
+  }
+
+  function extractFontUrl(srcValue) {
+    const matches = [
+      ...srcValue.matchAll(
+        /url\(["']?([^"')]+)["']?\)(?:\s*format\(["']?([^"')]+)["']?\))?/gi,
+      ),
+    ];
+    if (matches.length === 0) return null;
+    const woff2 = matches.find((m) => m[2] && m[2].toLowerCase().includes("woff2"));
+    if (woff2) return woff2[1];
+    const woff = matches.find((m) => m[2] && m[2].toLowerCase().includes("woff"));
+    if (woff) return woff[1];
+    return matches[0][1];
+  }
+
+  // Cache resolved font URL -> data URI across captures. Fonts on a page
+  // essentially never change, and a batch run emits multiple captures back to
+  // back — without this we'd refetch + re-base64 every time.
+  const fontDataUriCache = new Map();
+  const SRC_DECLARATION_RE = /src\s*:\s*[^;}]+/i;
+
+  async function fetchAsDataUri(url) {
+    if (fontDataUriCache.has(url)) return fontDataUriCache.get(url);
+    let dataUri = null;
+    try {
+      const response = await fetch(url, { mode: "cors", credentials: "omit" });
+      if (response.ok) {
+        const blob = await response.blob();
+        if (blob.size <= MAX_FONT_BYTES) {
+          dataUri = await new Promise((resolve) => {
+            const reader = new FileReader();
+            reader.onloadend = () =>
+              resolve(typeof reader.result === "string" ? reader.result : null);
+            reader.onerror = () => resolve(null);
+            reader.readAsDataURL(blob);
+          });
+        }
+      }
+    } catch (_error) {
+      dataUri = null;
+    }
+    fontDataUriCache.set(url, dataUri);
+    return dataUri;
+  }
+
+  function collectFontFaceRuleTexts() {
+    const rules = [];
+    for (const sheet of document.styleSheets) {
+      let cssRules;
+      try {
+        cssRules = sheet.cssRules;
+      } catch (_error) {
+        continue;
+      }
+      if (!cssRules) continue;
+      for (const rule of cssRules) {
+        const cssText = rule.cssText || "";
+        if (cssText.startsWith("@font-face")) rules.push(cssText);
+      }
+    }
+    return rules;
+  }
+
+  async function buildInlinedFontCss() {
+    const ruleTexts = collectFontFaceRuleTexts();
+    if (ruleTexts.length === 0) return null;
+
+    const resolved = ruleTexts.map((cssText) => {
+      if (!SRC_DECLARATION_RE.test(cssText)) return null;
+      const srcMatch = cssText.match(/src\s*:\s*([^;}]+)[;}]/i);
+      if (!srcMatch) return null;
+      const url = extractFontUrl(srcMatch[1]);
+      if (!url) return null;
+      try {
+        return { cssText, url: new URL(url, document.baseURI).href };
+      } catch (_error) {
+        return null;
+      }
+    });
+
+    const dataUris = await Promise.all(
+      resolved.map((entry) => (entry ? fetchAsDataUri(entry.url) : Promise.resolve(null))),
+    );
+
+    const inlined = [];
+    let totalBytes = 0;
+    for (let index = 0; index < resolved.length; index += 1) {
+      const entry = resolved[index];
+      const dataUri = dataUris[index];
+      if (!entry || !dataUri) continue;
+      const approxBytes = dataUri.length * 0.75;
+      if (totalBytes + approxBytes > MAX_TOTAL_FONT_BYTES) break;
+      totalBytes += approxBytes;
+      inlined.push(entry.cssText.replace(SRC_DECLARATION_RE, `src: url("${dataUri}")`));
+    }
+    return inlined.length > 0 ? inlined.join("\n") : null;
+  }
+
+  function stripExternal(clone) {
+    const images = clone.querySelectorAll("img");
+    for (let index = 0; index < images.length; index += 1) {
+      const src = images[index].getAttribute("src");
+      if (src && !src.startsWith("data:")) images[index].removeAttribute("src");
+    }
+
+    const elements = clone.querySelectorAll("*");
+    for (let index = 0; index < elements.length; index += 1) {
+      const style = elements[index].style.cssText;
+      if (style && style.includes("url(")) {
+        elements[index].style.cssText = style.replace(
+          /url\(["']?(?!data:)[^)"']*["']?\)/gi,
+          "none",
+        );
+      }
+    }
+  }
+
+  function emitScroll() {
+    scrollRaf = 0;
+    if (!scrollForwarding) return;
+    postToTrustedTop({
+      type: "INLINE_EDIT_SCROLL",
+      scrollX: window.scrollX,
+      scrollY: window.scrollY,
+    });
+  }
+
+  window.addEventListener(
+    "scroll",
+    function () {
+      if (!scrollForwarding || scrollRaf) return;
+      scrollRaf = requestAnimationFrame(emitScroll);
+    },
+    { passive: true, capture: true },
+  );
+
+  async function handleCaptureRequest(event) {
+    const requestId = event.data.requestId;
+    const scrollX = window.scrollX;
+    const scrollY = window.scrollY;
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+
+    function postResult(dataUrl) {
+      postToTrustedTop({
+        type: "INLINE_EDIT_SCREENSHOT_RESULT",
+        requestId,
+        dataUrl,
+        scrollX,
+        scrollY,
+      });
+    }
+
+    try {
+      // Wait for any pending web fonts to resolve so both inline metrics and
+      // the @font-face inlining below see the same loaded faces.
+      if (document.fonts && document.fonts.ready) {
+        try {
+          await document.fonts.ready;
+        } catch (_error) {}
+      }
+
+      const clone = document.documentElement.cloneNode(true);
+      inlineAll(document.documentElement, clone);
+
+      const removedNodes = clone.querySelectorAll("script,link[rel=\"stylesheet\"],style");
+      for (let index = 0; index < removedNodes.length; index += 1) {
+        removedNodes[index].remove();
+      }
+
+      stripExternal(clone);
+
+      // Re-embed web fonts as data-URI @font-face rules so the SVG rasterizer
+      // can resolve them — external font URLs aren't fetched during
+      // foreignObject rendering, which would otherwise force a fallback face
+      // and change text metrics.
+      const inlinedFontCss = await buildInlinedFontCss();
+      if (inlinedFontCss) {
+        const styleEl = document.createElement("style");
+        styleEl.textContent = inlinedFontCss;
+        const head = clone.querySelector("head");
+        if (head) head.appendChild(styleEl);
+        else clone.insertBefore(styleEl, clone.firstChild);
+      }
+
+      const html = new XMLSerializer().serializeToString(clone);
+      const svg =
+        `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}">` +
+        '<foreignObject width="100%" height="100%">' +
+        `<div xmlns="http://www.w3.org/1999/xhtml" style="width:${width}px;height:${height}px;overflow:hidden">` +
+        `<div style="transform:translate(-${scrollX}px,-${scrollY}px);transform-origin:top left">` +
+        html +
+        "</div></div></foreignObject></svg>";
+      const svgUrl = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
+      const image = new Image();
+      image.onload = function () {
+        const canvas = document.createElement("canvas");
+        canvas.width = width;
+        canvas.height = height;
+        canvas.getContext("2d").drawImage(image, 0, 0);
+        postResult(canvas.toDataURL("image/png"));
+      };
+      image.onerror = function () {
+        postResult(null);
+      };
+      image.src = svgUrl;
+    } catch (_error) {
+      postResult(null);
+    }
+  }
+
+  window.addEventListener("message", function (event) {
+    if (!event.data) return;
+    // Only accept messages from the direct parent frame. Blocks sibling /
+    // unrelated-window postMessage senders that could otherwise reach us.
+    if (event.source !== window.parent) return;
+
+    const trustedParentOrigin = getTrustedParentOrigin(event);
+    if (!trustedParentOrigin) return;
+    trustedTopOrigin = trustedParentOrigin;
+
+    if (event.data.type === "INLINE_EDIT_SCROLL_START") {
+      scrollForwarding = true;
+      emitScroll();
+      return;
+    }
+
+    if (event.data.type === "INLINE_EDIT_SCROLL_STOP") {
+      scrollForwarding = false;
+      if (scrollRaf) cancelAnimationFrame(scrollRaf);
+      scrollRaf = 0;
+      return;
+    }
+
+    if (event.data.type !== "INLINE_EDIT_CAPTURE_REQUEST") return;
+
+    handleCaptureRequest(event);
+  });
+})();
+
+
+</script></body>
+</html>
