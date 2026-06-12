@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="pt" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>O SITE — uma experiência interativa</title>
+  <meta name="description" content="O SITE: uma experiência imersiva construída à mão — canvas generativo, física, som e tipografia viva. Zero dependências." />
+  <meta property="og:title" content="O SITE — uma experiência interativa" />
+  <meta property="og:description" content="Canvas generativo, física, som e tipografia viva. Zero dependências. Construído à mão." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#070710" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&family=Space+Grotesk:wght@300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- PRELOADER -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader-inner">
+      <span class="loader-star">✦</span>
+      <span class="loader-count" id="loaderCount">0</span>
+    </div>
+  </div>
+
+  <!-- CURSOR -->
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+  <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
+  <!-- SCROLL PROGRESS -->
+  <div class="progress" id="progress" aria-hidden="true"></div>
+
+  <!-- GRAIN -->
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <a class="nav-brand" href="#topo" data-hover>✦ O&nbsp;SITE</a>
+    <nav class="nav-links" aria-label="Navegação principal">
+      <a href="#manifesto" data-hover>Manifesto</a>
+      <a href="#capitulos" data-hover>Capítulos</a>
+      <a href="#numeros" data-hover>Números</a>
+      <a href="#fim" data-hover>Fim</a>
+    </nav>
+    <button class="theme-toggle" id="themeToggle" data-hover aria-label="Alternar tema claro/escuro">
+      <span class="theme-icon"></span>
+    </button>
+  </header>
+
+  <main id="topo">
+
+    <!-- ====================== HERO ====================== -->
+    <section class="hero" id="hero">
+      <canvas id="auroraCanvas" class="hero-canvas" aria-hidden="true"></canvas>
+      <div class="hero-content">
+        <p class="hero-eyebrow" data-reveal>uma experiência · construída à mão · zero dependências</p>
+        <h1 class="hero-title" aria-label="O SITE">
+          <span class="hero-line"><span class="hero-word" data-magnet>O</span></span>
+          <span class="hero-line"><span class="hero-word hero-word--outline" data-magnet>SITE</span></span>
+        </h1>
+        <p class="hero-sub" data-reveal>
+          Pediste o melhor site possível. Isto não é um template —<br class="br-desktop" />
+          cada pixel, cada partícula e cada nota foram escritos do zero.
+        </p>
+        <div class="hero-cta" data-reveal>
+          <a class="btn" href="#capitulos" data-hover>Explorar os capítulos <span class="btn-arrow">↓</span></a>
+          <span class="hero-hint">move o rato · faz scroll · toca em tudo</span>
+        </div>
+      </div>
+      <div class="hero-scroll" aria-hidden="true"><span></span></div>
+    </section>
+
+    <!-- ====================== MARQUEE ====================== -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track" id="marqueeTrack">
+        <span>canvas generativo ✦ física em tempo real ✦ síntese de áudio ✦ tipografia viva ✦ scroll cinematográfico ✦ </span><span>canvas generativo ✦ física em tempo real ✦ síntese de áudio ✦ tipografia viva ✦ scroll cinematográfico ✦ </span>
+      </div>
+    </div>
+
+    <!-- ====================== MANIFESTO ====================== -->
+    <section class="manifesto section" id="manifesto">
+      <div class="container">
+        <span class="section-tag" data-reveal>§ 01 — manifesto</span>
+        <h2 class="manifesto-text">
+          <span class="m-line" data-reveal>A web ficou cheia de sites iguais.</span>
+          <span class="m-line" data-reveal>Templates, frameworks, atalhos.</span>
+          <span class="m-line m-line--accent" data-reveal>Este não.</span>
+          <span class="m-line" data-reveal>Aqui, cada animação é matemática escrita à mão,</span>
+          <span class="m-line" data-reveal>cada som é uma onda sintetizada no momento,</span>
+          <span class="m-line" data-reveal>e nada — <em>nada</em> — foi importado de uma biblioteca.</span>
+          <span class="m-line m-line--accent" data-reveal>HTML. CSS. JavaScript. Só.</span>
+        </h2>
+      </div>
+    </section>
+
+    <!-- ====================== CAPÍTULOS ====================== -->
+    <section class="section" id="capitulos">
+      <div class="container">
+        <span class="section-tag" data-reveal>§ 02 — capítulos interativos</span>
+        <h2 class="section-title" data-reveal>Cinco experiências.<br /><span class="outline-text">Toca-lhes.</span></h2>
+      </div>
+
+      <!-- CAP 1 · PARTÍCULAS -->
+      <article class="chapter container" id="cap-particulas">
+        <header class="chapter-head" data-reveal>
+          <span class="chapter-num">01</span>
+          <div>
+            <h3>Constelação</h3>
+            <p>120 partículas, ligações por proximidade, repulsão ao rato. Clica para inverter a gravidade.</p>
+          </div>
+        </header>
+        <div class="chapter-stage" data-reveal>
+          <canvas id="particleCanvas" class="stage-canvas" data-hover></canvas>
+          <div class="stage-controls">
+            <button class="ctrl" id="particleMode" data-hover>modo: repelir</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- CAP 2 · FLOW FIELD -->
+      <article class="chapter container" id="cap-fluxo">
+        <header class="chapter-head" data-reveal>
+          <span class="chapter-num">02</span>
+          <div>
+            <h3>Campo de fluxo</h3>
+            <p>Arte generativa: milhares de traços a seguir um campo de ruído. Cada semente é uma obra única — guarda a tua.</p>
+          </div>
+        </header>
+        <div class="chapter-stage" data-reveal>
+          <canvas id="flowCanvas" class="stage-canvas"></canvas>
+          <div class="stage-controls">
+            <button class="ctrl" id="flowRegen" data-hover>↻ nova obra</button>
+            <button class="ctrl" id="flowSave" data-hover>↓ guardar PNG</button>
+            <span class="ctrl-info" id="flowSeed">semente —</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- CAP 3 · FÍSICA -->
+      <article class="chapter container" id="cap-fisica">
+        <header class="chapter-head" data-reveal>
+          <span class="chapter-num">03</span>
+          <div>
+            <h3>Gravidade</h3>
+            <p>Motor de física escrito do zero: gravidade, atrito, colisões. Clica para lançar bolas, mantém premido para as atrair.</p>
+          </div>
+        </header>
+        <div class="chapter-stage" data-reveal>
+          <canvas id="physicsCanvas" class="stage-canvas" data-hover></canvas>
+          <div class="stage-controls">
+            <button class="ctrl" id="physicsReset" data-hover>↻ limpar</button>
+            <button class="ctrl" id="physicsGravity" data-hover>gravidade: normal</button>
+            <span class="ctrl-info" id="physicsCount">0 corpos</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- CAP 4 · SOM -->
+      <article class="chapter container" id="cap-som">
+        <header class="chapter-head" data-reveal>
+          <span class="chapter-num">04</span>
+          <div>
+            <h3>Máquina de som</h3>
+            <p>Um sequenciador pentatónico sintetizado com Web Audio — osciladores, envelopes e eco, tudo gerado em tempo real. Pinta a grelha e carrega em play.</p>
+          </div>
+        </header>
+        <div class="chapter-stage chapter-stage--seq" data-reveal>
+          <div class="seq" id="seqGrid" role="grid" aria-label="Sequenciador de 8 passos por 5 notas"></div>
+          <div class="stage-controls">
+            <button class="ctrl ctrl--primary" id="seqPlay" data-hover>▶ play</button>
+            <button class="ctrl" id="seqRandom" data-hover>⚄ aleatório</button>
+            <button class="ctrl" id="seqClear" data-hover>✕ limpar</button>
+            <label class="ctrl-slider">tempo
+              <input type="range" id="seqTempo" min="70" max="180" value="112" data-hover />
+              <span id="seqBpm">112 bpm</span>
+            </label>
+          </div>
+        </div>
+      </article>
+
+      <!-- CAP 5 · TIPO -->
+      <article class="chapter container" id="cap-tipo">
+        <header class="chapter-head" data-reveal>
+          <span class="chapter-num">05</span>
+          <div>
+            <h3>Tipografia viva</h3>
+            <p>Uma fonte variável que respira: o peso segue o teu rato. O texto é editável — escreve o que quiseres.</p>
+          </div>
+        </header>
+        <div class="chapter-stage chapter-stage--type" data-reveal id="typeStage">
+          <p class="type-playground" id="typeText" contenteditable="true" spellcheck="false">escreve aqui</p>
+          <div class="stage-controls">
+            <span class="ctrl-info" id="typeWeight">peso 400</span>
+            <span class="ctrl-info">← move o rato →</span>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- ====================== NÚMEROS ====================== -->
+    <section class="section numbers" id="numeros">
+      <div class="container">
+        <span class="section-tag" data-reveal>§ 03 — debaixo do capot</span>
+        <div class="numbers-grid">
+          <div class="number" data-reveal>
+            <span class="number-value" data-count="0">0</span>
+            <span class="number-label">bibliotecas JS importadas</span>
+          </div>
+          <div class="number" data-reveal>
+            <span class="number-value" data-count="5">0</span>
+            <span class="number-label">motores escritos do zero</span>
+          </div>
+          <div class="number" data-reveal>
+            <span class="number-value" data-count="60">0</span>
+            <span class="number-label">frames por segundo, alvo</span>
+          </div>
+          <div class="number" data-reveal>
+            <span class="number-value" data-count="100">0</span>
+            <span class="number-label">% feito à mão</span>
+          </div>
+        </div>
+        <p class="numbers-note" data-reveal>
+          Aurora em canvas dual-buffer · ruído de valor com interpolação suave · integração de Euler com colisões elásticas ·
+          osciladores com envelopes ADSR e linha de eco · <code>IntersectionObserver</code> para revelações ·
+          respeita <code>prefers-reduced-motion</code> · um único pedido externo: as fontes.
+        </p>
+      </div>
+    </section>
+
+    <!-- ====================== FIM ====================== -->
+    <section class="section fim" id="fim">
+      <canvas id="fimCanvas" class="fim-canvas" aria-hidden="true"></canvas>
+      <div class="container fim-content">
+        <h2 class="fim-title" data-reveal>Isto foi<br /><span class="outline-text">O SITE.</span></h2>
+        <p class="fim-sub" data-reveal>Construído de raiz por Claude, numa só sessão.<br />Experimenta o código Konami. ↑↑↓↓←→←→BA</p>
+        <a class="btn" href="#topo" data-hover data-reveal>Voltar ao início <span class="btn-arrow">↑</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>✦ O SITE — {{ano}} · feito com canvas, matemática e teimosia</span>
+      <span class="footer-links">
+        <a href="../" data-hover>raiz</a> · <a href="../social/" data-hover>nexo</a>
+      </span>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
