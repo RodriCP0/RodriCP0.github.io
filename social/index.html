@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nexo — A tua rede social</title>
+  <meta name="description" content="Nexo: uma rede social moderna. Partilha momentos, segue pessoas, conversa e descobre conteúdos." />
+  <meta name="theme-color" content="#6c5ce7" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%236c5ce7'/%3E%3Cstop offset='1' stop-color='%2300cec9'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='url(%23g)'/%3E%3Ctext x='32' y='44' font-family='Arial' font-size='36' font-weight='bold' fill='white' text-anchor='middle'%3EN%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+
+  <!-- ECRÃ DE AUTENTICAÇÃO -->
+  <div id="authScreen" class="auth-screen hidden">
+    <div class="auth-art">
+      <div class="auth-art-inner">
+        <div class="auth-logo">
+          <span class="logo-badge">N</span>
+          <span class="logo-name">Nexo</span>
+        </div>
+        <h1>Liga-te ao que<br><em>importa</em>.</h1>
+        <p>Partilha momentos, segue pessoas interessantes e conversa em tempo real — tudo num só lugar.</p>
+        <div class="auth-bullets">
+          <div class="auth-bullet"><span>📸</span> Publica fotos e pensamentos</div>
+          <div class="auth-bullet"><span>💬</span> Mensagens diretas instantâneas</div>
+          <div class="auth-bullet"><span>🔔</span> Notificações em tempo real</div>
+        </div>
+      </div>
+    </div>
+    <div class="auth-panel">
+      <div class="auth-card">
+        <h2 id="authTitle">Cria a tua conta</h2>
+        <p class="auth-sub" id="authSub">Demora menos de um minuto. Os teus dados ficam guardados neste dispositivo.</p>
+        <form id="authForm" autocomplete="off">
+          <div class="field" id="fieldName">
+            <label for="inName">Nome</label>
+            <input id="inName" type="text" maxlength="40" placeholder="ex.: Rodrigo Pereira" />
+          </div>
+          <div class="field">
+            <label for="inHandle">Nome de utilizador</label>
+            <div class="handle-wrap">
+              <span>@</span>
+              <input id="inHandle" type="text" maxlength="20" placeholder="rodrigo" />
+            </div>
+            <small class="field-hint" id="handleHint"></small>
+          </div>
+          <div class="field" id="fieldBio">
+            <label for="inBio">Bio <span class="optional">(opcional)</span></label>
+            <input id="inBio" type="text" maxlength="120" placeholder="Fala um pouco sobre ti…" />
+          </div>
+          <button type="submit" class="btn-primary btn-block" id="authBtn">Criar conta</button>
+        </form>
+        <p class="auth-switch" id="authSwitch"></p>
+      </div>
+      <p class="auth-footnote">Demo 100% no browser — sem servidores, sem registo de e-mail.</p>
+    </div>
+  </div>
+
+  <!-- APLICAÇÃO -->
+  <div id="app" class="app hidden">
+
+    <!-- BARRA LATERAL ESQUERDA -->
+    <aside class="sidebar">
+      <a class="sidebar-logo" href="#/feed">
+        <span class="logo-badge">N</span>
+        <span class="logo-name">Nexo</span>
+      </a>
+      <nav class="sidebar-nav" id="sideNav">
+        <a href="#/feed" data-route="feed">
+          <svg viewBox="0 0 24 24"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v10h5v-6h4v6h5V10"/></svg>
+          <span>Início</span>
+        </a>
+        <a href="#/explore" data-route="explore">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+          <span>Explorar</span>
+        </a>
+        <a href="#/notifications" data-route="notifications">
+          <svg viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg>
+          <span>Notificações</span>
+          <span class="nav-badge hidden" id="notifBadge">0</span>
+        </a>
+        <a href="#/messages" data-route="messages">
+          <svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 8.6 8.6 0 0 1-3.7-.8L3 21l1.9-5.3a8.4 8.4 0 1 1 16.1-4.2Z"/></svg>
+          <span>Mensagens</span>
+          <span class="nav-badge hidden" id="msgBadge">0</span>
+        </a>
+        <a href="#/saved" data-route="saved">
+          <svg viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2Z"/></svg>
+          <span>Guardados</span>
+        </a>
+        <a href="#/profile" data-route="profile" id="navProfile">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5"/></svg>
+          <span>Perfil</span>
+        </a>
+      </nav>
+      <button class="btn-primary sidebar-post-btn" id="openComposer">Publicar</button>
+      <div class="sidebar-footer">
+        <button class="theme-toggle" id="themeToggle" title="Alternar tema">
+          <span class="tt-icon">🌙</span><span class="tt-label">Tema escuro</span>
+        </button>
+        <button class="sidebar-me" id="sidebarMe"></button>
+      </div>
+    </aside>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="main" id="main"></main>
+
+    <!-- BARRA LATERAL DIREITA -->
+    <aside class="rightbar" id="rightbar"></aside>
+
+    <!-- NAVEGAÇÃO MÓVEL -->
+    <nav class="mobile-nav" id="mobileNav">
+      <a href="#/feed" data-route="feed"><svg viewBox="0 0 24 24"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v10h5v-6h4v6h5V10"/></svg></a>
+      <a href="#/explore" data-route="explore"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></a>
+      <button class="mobile-post" id="openComposerMobile">+</button>
+      <a href="#/notifications" data-route="notifications" class="mobile-notif">
+        <svg viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg>
+        <span class="nav-badge hidden" id="notifBadgeMobile"></span>
+      </a>
+      <a href="#/messages" data-route="messages">
+        <svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 8.6 8.6 0 0 1-3.7-.8L3 21l1.9-5.3a8.4 8.4 0 1 1 16.1-4.2Z"/></svg>
+      </a>
+    </nav>
+  </div>
+
+  <!-- MODAL DE COMPOSIÇÃO -->
+  <div class="modal-overlay hidden" id="composerModal">
+    <div class="modal composer-modal">
+      <div class="modal-head">
+        <h3>Nova publicação</h3>
+        <button class="modal-close" data-close="composerModal">✕</button>
+      </div>
+      <div class="composer">
+        <div class="composer-row">
+          <img class="avatar" id="composerAvatar" alt="" />
+          <textarea id="composerText" rows="4" maxlength="500" placeholder="O que se passa?"></textarea>
+        </div>
+        <div class="composer-preview hidden" id="composerPreview">
+          <img id="composerPreviewImg" alt="Pré-visualização" />
+          <button id="composerRemoveImg" title="Remover imagem">✕</button>
+        </div>
+        <div class="composer-foot">
+          <label class="composer-tool" title="Adicionar imagem">
+            <input type="file" id="composerFile" accept="image/*" hidden />
+            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="9" cy="9" r="2"/><path d="m21 15-4.5-4.5L7 20"/></svg>
+          </label>
+          <span class="composer-count" id="composerCount">0/500</span>
+          <button class="btn-primary" id="composerSubmit" disabled>Publicar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL DE EDIÇÃO DE PERFIL -->
+  <div class="modal-overlay hidden" id="editProfileModal">
+    <div class="modal">
+      <div class="modal-head">
+        <h3>Editar perfil</h3>
+        <button class="modal-close" data-close="editProfileModal">✕</button>
+      </div>
+      <form id="editProfileForm" class="edit-profile-form">
+        <div class="field">
+          <label for="epName">Nome</label>
+          <input id="epName" type="text" maxlength="40" required />
+        </div>
+        <div class="field">
+          <label for="epBio">Bio</label>
+          <textarea id="epBio" rows="3" maxlength="160"></textarea>
+        </div>
+        <div class="field">
+          <label for="epAvatar">Fotografia de perfil</label>
+          <div class="ep-avatar-row">
+            <img class="avatar avatar-lg" id="epAvatarPreview" alt="" />
+            <label class="btn-ghost">
+              Carregar imagem
+              <input type="file" id="epAvatar" accept="image/*" hidden />
+            </label>
+          </div>
+        </div>
+        <button type="submit" class="btn-primary btn-block">Guardar alterações</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- VISUALIZADOR DE IMAGEM -->
+  <div class="lightbox hidden" id="lightbox">
+    <button class="lightbox-close">✕</button>
+    <img id="lightboxImg" alt="" />
+  </div>
+
+  <!-- TOASTS -->
+  <div class="toasts" id="toasts"></div>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>
