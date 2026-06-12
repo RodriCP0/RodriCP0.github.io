@@ -1,0 +1,15 @@
+{
+  "name": "Nexo — A tua rede social",
+  "short_name": "Nexo",
+  "description": "Partilha momentos e stories, segue pessoas e conversa em tempo real.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0a0b14",
+  "theme_color": "#6c5ce7",
+  "lang": "pt",
+  "icons": [
+    { "src": "assets/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}
